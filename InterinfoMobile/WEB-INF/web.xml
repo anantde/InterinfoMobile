@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<filter>
+		<filter-name>struts2</filter-name>
+		<!-- <filter-class>org.apache.struts2.dispatcher.FilterDispatcher org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class> -->
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<session-config>
+		<session-timeout>20</session-timeout>
+	</session-config>
+
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	
+<!-- 	 	<env-entry> <env-entry-name>customReportFilePath</env-entry-name> 
+	    <env-entry-value>/home1/prod/customreportfiles</env-entry-value> 
+		<env-entry-type>java.lang.String</env-entry-type> </env-entry> -->
+
+		<env-entry>
+		<env-entry-name>customReportFilePath</env-entry-name>
+		<env-entry-value>/home1/dev/customreportfiles</env-entry-value>
+		<env-entry-type>java.lang.String</env-entry-type> </env-entry> 
+
+
+<!-- 	 	<env-entry> <env-entry-name>standardReportFilePath</env-entry-name> 
+		<env-entry-value>/home1/prod/standardreportfiles</env-entry-value> 
+		<env-entry-type>java.lang.String</env-entry-type> </env-entry>  -->
+
+	    <env-entry>
+		<env-entry-name>standardReportFilePath</env-entry-name>
+		<env-entry-value>/home1/dev/standardreportfiles</env-entry-value>
+		<env-entry-type>java.lang.String</env-entry-type></env-entry> 
+		
+		<!-- <env-entry>
+		<env-entry-name>standardReportFilePath</env-entry-name>
+		<env-entry-value>/home/admin1/Downloads</env-entry-value>
+		<env-entry-type>java.lang.String</env-entry-type></env-entry>  -->
+</web-app>

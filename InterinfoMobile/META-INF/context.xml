@@ -1,0 +1,18 @@
+<Context path="/InterinfoMobile" reloadable="true"> <Resource name="jdbc/ii" 
+	auth="Container" type="javax.sql.DataSource" maxActive="100" maxIdle="30" 
+	maxWait="10000" username="root" password="UVa9799x5i" validationQuery="select 
+	1" testOnBorrow="true" timeBetweenEvictionRunsMillis="86400000" removeAbandoned="true" 
+	removeAbandonedTimeout="86400" driverClassName="com.mysql.jdbc.Driver" 
+	url="jdbc:mysql://54.169.129.124:3306/interinfodev?autoReconnect=true"/> 
+</Context>  
+
+
+   
+<!-- <Context path="/" reloadable="true">
+	<Resource name="jdbc/ii" auth="Container" type="javax.sql.DataSource"
+		maxActive="100" maxIdle="30" maxWait="10000" username="root" password="UVa9799x5i"
+		validationQuery="select 1" testOnBorrow="true"
+		timeBetweenEvictionRunsMillis="86400000" removeAbandoned="true"
+		removeAbandonedTimeout="86400" driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://54.169.129.124:3306/interinfo?autoReconnect=true" />
+</Context> -->

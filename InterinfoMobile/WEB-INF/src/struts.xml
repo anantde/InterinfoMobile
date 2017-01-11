@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN" "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="global" />
+	<package name="jsonMobile" namespace="/mobile" extends="json-default">
+		<interceptors>
+			<interceptor name="mylogging" class="interceptor.SessionCheckInterceptor"></interceptor>
+			<interceptor-stack name="loggingStack">
+				<interceptor-ref name="mylogging" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		
+		<action name="login" class="mAction.MobLoginAction" method="login">
+			<interceptor-ref name="json" />
+			<result type="json">
+				<param name="root">loginResponse</param>
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="getAssignedReportListForUser" class="mAction.MobReportAuditAction"
+			method="getAssignedReportListForUser">
+			<result type="json">
+				<param name="root">objReportDetailResponse</param>
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="deleteReportFromUserHome" class="mAction.MobReportAction"
+			method="deleteReportFromUserHome">
+			<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="changePassword" class="mAction.MobProfileAction"
+			method="changePassword">
+			<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="downloadStandardReport" class="mAction.MobReportAction"
+			method="downloadStandardReport">
+			<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="loadCreateClientSupplierComparePage" class="mAction.MobClientSupplierCompareAction"
+			method="loadCreateClientSupplierComparePage">
+			<result type="json">
+			    	<param name="root">listResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="submitClientSupplierCompareReport" class="mAction.MobClientSupplierCompareAction"
+			method="submitClientSupplierCompareReport">
+			<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="loadCreateCompleteIndividualReport" class="mAction.MobCompleteIndividualReportAction"
+			method="loadCreateCompleteIndividualReport">
+			<result type="json">
+			    	<param name="root">objListCiCnResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="createCompleteIndividualReport" class="mAction.MobCompleteIndividualReportAction"
+			method="createCompleteIndividualReport">
+		<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="getMaxRecentYearFromConfigurationTable" class="mAction.MobCompleteIndividualReportAction"
+			method="getMaxRecentYearFromConfigurationTable">
+			<result type="json">
+				<param name="root">objListCiCnResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="loadTopRfcReport" class="mAction.MobTopRFCReportAction"
+			method="loadTopRfcReport">
+			<result type="json">
+			    	<param name="root">objIeResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="createTopRfcReport" class="mAction.MobTopRFCReportAction"
+			method="createTopRfcReport">
+			<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="loadHscodeReport" class="mAction.MobTopHscodeNewReportAction" method="loadHscodeReport">
+			<result type="json">
+				<param name="root">objHscodeIEResponse</param>
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="createTopHscodeReport" class="mAction.MobTopHscodeNewReportAction"
+			method="createTopHscodeReport">
+			<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="loadCreateDragonReportPage" class="mAction.MobDragonReportAction"
+			method="loadCreateDragonReportPage">
+			<result type="json">
+				<param name="root">objDragonReportResponse</param>
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="submitDragonReport" class="mAction.MobDragonReportAction"
+			method="submitDragonReport">
+			<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="getReportListForEdit" class="mAction.MobGetReportList"
+			method="getReportListForEdit">
+			<result type="json">
+			    	<param name="root">listResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="getClientSupplierCompareData" class="mAction.MobClientSupplierCompareAction"
+			method="getClientSupplierCompareData">
+			<result type="json">
+			    	<param name="root">listResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="getCompleteIndividualReportData" class="mAction.MobCompleteIndividualReportAction"
+			method="getCompleteIndividualReportData">
+			<result type="json">
+			    	<param name="root">objListCiCnResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="getTopRfcReportData" class="mAction.MobTopRFCReportAction"
+			method="getTopRfcReportData">
+			<result type="json">
+			    	<param name="root">objIeResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="getTopHscodeReportData" class="mAction.MobTopHscodeNewReportAction" method="getTopHscodeReportData">
+			<result type="json">
+			    	<param name="root">objHscodeIEResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="getDragonReportData" class="mAction.MobDragonReportAction"
+			method="getDragonReportData">
+			<result type="json">
+			    	<param name="root">dragonResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="editClientSupplierCompareReport" class="mAction.MobClientSupplierCompareAction"
+			method="editClientSupplierCompareReport">
+			<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="EditCompleteIndividualReport" class="mAction.MobCompleteIndividualReportAction"
+			method="EditCompleteIndividualReport">
+			<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="EditTopRfcReport" class="mAction.MobTopRFCReportAction"
+			method="EditTopRfcReport">
+			<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="UpdateEditTopHscodeReport" class="mAction.MobTopHscodeNewReportAction" method="EditTopHscodeReport">
+			<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="editDragonReport" class="mAction.MobDragonReportAction"
+			method="editDragonReport">
+			<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="logout" class="mAction.MobLoginAction" method="logout">
+		<result type="json">
+			    	<param name="root">emptyResponse</param>
+			    	<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+	</package>
+
+</struts>
